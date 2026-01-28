@@ -59,7 +59,7 @@ self.layer = nn.Linear(...)
 PyTorch automatically:
 - Registers parameters
 - Tracks them for optimization
-- Includes them in `model.parameters()'
+- Includes them in `model.parameters()`
 
 
 ### Important
