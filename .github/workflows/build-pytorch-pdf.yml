@@ -1,4 +1,6 @@
 name: Build PyTorch Notes PDF
+permissions:
+  contents: write
 
 on:
   push:
