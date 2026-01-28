@@ -124,4 +124,4 @@ If PyTorch feels simple after this, that is not because it *is* simple.
 It is because you understand it.
 
 ---
-Authored by: Sai Harsha Kondaveeti
+Authored by: Sai Harsha Kondaveeti 
