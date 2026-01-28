@@ -54,11 +54,13 @@ When you assign them as attributes:
 
 ```python
 self.layer = nn.Linear(...)
+```
 
 PyTorch automatically:
 - Registers parameters
 - Tracks them for optimization
-- Includes them in `model.parameters()`
+- Includes them in `model.parameters()'
+
 
 ### Important
 - Only attributes assigned to `self` are registered
