@@ -1,0 +1,31 @@
+name: Build PyTorch Notes PDF
+
+on:
+  push:
+    paths:
+      - "pytorch/**/*.md"
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Pandoc and LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex
+
+      - name: Build PDF
+        run: |
+          bash scripts/build_pytorch_notes_pdf.sh
+
+      - name: Commit updated PDF
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add pytorch/pdf/pytorch-core-notes.pdf
+          git commit -m "Auto-update PyTorch core notes PDF" || echo "No changes to commit"
+          git push
